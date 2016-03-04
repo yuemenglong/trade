@@ -42,8 +42,10 @@ if (require.main == module) {
     console.log(win + loss);
     console.log("胜率");
     console.log(win / (win + loss) * 100);
-    console.log("盈亏比")
+    console.log("单次盈亏比")
     console.log((winTotal / win) / (lossTotal / loss));
+    console.log("盈亏比")
+    console.log(winTotal / lossTotal);
     console.log("最大回撤");
     console.log(maxRetrace * 100);
     console.log("盈利");
