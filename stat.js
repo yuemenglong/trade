@@ -11,6 +11,7 @@ if (require.main == module) {
     var content = fs.readFileSync(filePath).toString();
     var lines = content.match(/.+/g);
     var start = 2000;
+    var chart = [start];
     var win = 0;
     var loss = 0;
     var winTotal = 0;
@@ -23,6 +24,7 @@ if (require.main == module) {
         var line = lines[i];
         var price = parseFloat(line.split(",").slice(-2)[0]);
         cur += price;
+        chart.push(cur);
         if (cur > max) {
             max = cur;
         }
@@ -38,6 +40,11 @@ if (require.main == module) {
             lossTotal -= price;
         }
     }
+    chart.forEach(function(item) {
+        console.log(item);
+    })
+    console.log("\n###########################\n");
+
     console.log("开仓次数");
     console.log(win + loss);
     console.log("胜率");
