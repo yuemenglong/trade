@@ -1,5 +1,3 @@
-var common = require("../yy-common");
-var logger = common.logger;
 var fs = require("fs");
 
 if (require.main == module) {
